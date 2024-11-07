@@ -102,7 +102,33 @@
     </ul>
 
     </section>
+<div class="abhishek-client" style="font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f3f3f3;">
+      <!-- Grid Container -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 80%; max-width: 600px;">
+        <!-- Individual Boxes -->
+        <div onclick="showStory('Story 1')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 2')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 3')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 4')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 5')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 6')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 7')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 8')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+        <div onclick="showStory('Story 9')" style="width: 100%; padding-top: 100%; position: relative; border-radius: 15px; background-color: #d1d1d1; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
+    </div>
 
+    <!-- Floating Story Container -->
+    <div id="storyContainer" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; max-width: 600px; padding: 20px; border-radius: 15px; background-color: #111; color: #fff; box-shadow: 0 8px 16px rgba(0,0,0,0.3); text-align: center; z-index: 100;">
+        <img id="storyImage" src="https://via.placeholder.com/150" alt="Story Image" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px;">
+        <h2 id="storyTitle">Story Title</h2>
+        <p id="storyText">This is a placeholder for the story illustration. Click anywhere outside to close.</p>
+    </div>
+
+    <!-- Background Overlay -->
+    <div id="overlay" onclick="closeStory()" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 50;"></div>
+
+    <!-- JavaScript to Handle Story Display -->
+</div>
     <!-- Objective Section -->
     <section id="objective" style="display: none;">
         <h2>Why Students Should Be Aware About Finance</h2>
@@ -234,6 +260,18 @@ The original method of stock market trading was based on a manual system known a
         <p>© 2024 Yunicorn-Finance Club | MNIT Jaipur</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+          function showStory(story) {
+            document.getElementById('storyTitle').innerText = story;
+            document.getElementById('storyText').innerText = 'This is the content for ' + story + '. Here you can describe the story in detail.';
+            document.getElementById('storyContainer').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeStory() {
+            document.getElementById('storyContainer').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
